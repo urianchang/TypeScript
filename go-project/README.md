@@ -20,8 +20,26 @@ export GITHUB_TOKEN="GH_API_Token"
 
 ### Publish GitHub release
 1. Create and checkout a branch with the format: `cli/rc<version>`. Example: `cli/rc0.0.1`
-2. Update `CliVersion` in cmd/version.go
-3. Update cmd/CHANGELOG.md
+2. Update `CliVersion` in cmd/version.go by removing the `+dev` suffix.
+
+```bash
+> git diff cmd/version.go  
+...
+-var CliVersion = "0.0.1+dev"
++var CliVersion = "0.0.1"
+```
+
+3. Update cmd/CHANGELOG.md by removing the `+dev` suffix from the version and add the
+version's release date.
+
+```bash
+> git diff cmd/CHANGELOG.md 
+...
+ # CHANGELOG
+-## Release: 0.0.1+dev ([master](https://github.com/urianchang/sandbox-1/tree/master/go-project))
++## Release: 0.0.1 (7/8/2021)
+```
+
 4. Commit and push your changes to the upstream repository.
 5. Create a GitHub Pull Request (PR) and seek approval.
 6. When the PR has been approved, create and push a git tab with the format: `cli-<version>`

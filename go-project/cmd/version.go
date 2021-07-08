@@ -12,7 +12,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var CliVersion = "0.0.1+dev"
+var CliVersion = "0.0.1"
 
 //go:embed CHANGELOG.md
 var CHANGELOG []byte
