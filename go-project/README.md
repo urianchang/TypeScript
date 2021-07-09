@@ -1,4 +1,37 @@
 # go-project
+## Installing the CLI
+Some ways of installing the CLI:
+* `wget` the desired binary from GitHub Releases
+
+```bash
+$ wget -c https://github.com/urianchang/sandbox-1/releases/download/cli-0.0.1/go-project_0.0.1_Darwin-x86_64.tar.gz -P /tmp/go-project && \
+tar -xzf /tmp/go-project/go-project_0.0.1_Darwin-x86_64.tar.gz -C /tmp/go-project && \
+cp /tmp/go-project/hello-world /usr/local/bin && \
+rm -rf /tmp/go-project
+```
+
+* `npm install` from the GitHub npm registry.
+
+```bash
+# You'll need to include this in your ~/.npmrc
+$ cat ~/.npmrc
+@urianchang:registry=https://npm.pkg.github.com/
+
+$ npm install -g @urianchang/go-project
+
+> @urianchang/go-project@0.0.1 preuninstall /usr/local/lib/node_modules/@urianchang/go-project
+> node postinstall.js uninstall
+
+Uninstalled cli successfully
+
+> @urianchang/go-project@0.0.1 postinstall /usr/local/lib/node_modules/@urianchang/go-project
+> node postinstall.js install
+
+Copying the relevant binary for your platform darwin
+Installed cli successfully
++ @urianchang/go-project@0.0.1
+updated 1 package in 2.168s
+```
 
 ## Release Process
 ### Prerequisites
@@ -41,7 +74,7 @@ export GITHUB_TOKEN="GH_API_Token"
 
 4. Commit and push your changes to the upstream repository.
 5. Create a GitHub Pull Request (PR) and seek approval.
-6. When the PR has been approved, create and push a git tab with the format: `cli-<version>`
+6. When the PR has been approved, create and push a git tag with the format: `cli-<version>`
 
 ```bash
 > git tag -a cli-0.0.1 -m "CLI release v0.0.1"

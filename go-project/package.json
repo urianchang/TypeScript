@@ -1,0 +1,34 @@
+{
+  "name": "@urianchang/go-project",
+  "version": "0.0.1",
+  "description": "Testing CLI distribution",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node postinstall.js install",
+    "preuninstall": "node postinstall.js uninstall"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urianchang/sandbox-1.git"
+  },
+  "author": "Urian",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/urianchang/sandbox-1/issues"
+  },
+  "goBinary": {
+    "name": "hello-world",
+    "path": "./bin"
+  },
+  "homepage": "https://github.com/urianchang/sandbox-1/blob/master/go-project/README.md",
+  "files": [
+    "dist/**",
+    "postinstall.js"
+  ],
+  "dependencies": {
+    "mkdirp": "^1.0.4"
+  }
+}
