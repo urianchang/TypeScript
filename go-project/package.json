@@ -7,6 +7,9 @@
     "postinstall": "node postinstall.js install",
     "preuninstall": "node postinstall.js uninstall"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/urianchang/sandbox-1.git"
@@ -22,7 +25,7 @@
   },
   "homepage": "https://github.com/urianchang/sandbox-1/blob/master/go-project/README.md",
   "files": [
-    "dist",
+    "dist/**",
     "postinstall.js"
   ],
   "dependencies": {
